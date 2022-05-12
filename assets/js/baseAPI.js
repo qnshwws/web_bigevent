@@ -6,7 +6,7 @@ $.ajaxPrefilter(function(options) {
     options.url = 'http://www.liulongbin.top:3007' + options.url
 
     // 统一为有权限的接口，设置 headers 请求头
-    if (options.url.indexOf('/my/') !== -1) {
+    if (options.url.indexOf('/my/') !== -1) { //只有以/my/开头的才加请求头
         options.headers = {
             Authorization: localStorage.getItem('token') || ''
         }
